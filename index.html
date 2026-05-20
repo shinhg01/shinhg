@@ -58,7 +58,6 @@
         <a href="#works" class="nav-link">Works</a>
         <a href="#awards" class="nav-link">Awards</a>
         <a href="#lab" class="nav-link">Lab</a>
-        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div class="nav-actions">
@@ -86,7 +85,6 @@
       <a href="#works" class="mobile-link">Works</a>
       <a href="#awards" class="mobile-link">Awards</a>
       <a href="#lab" class="mobile-link">Lab</a>
-      <a href="#contact" class="mobile-link">Contact</a>
     </div>
   </div>
 
@@ -103,8 +101,11 @@
         </div>
 
         <h1 class="hero-title reveal">
-          <span class="gradient-text outfit-font">Diagnosis Before Treatment</span><br>
-          <span class="bold-text">Powered by Action.</span>
+          <span class="hero-eyebrow outfit-font">Diagnosis</span>
+          <span class="hero-main-phrase outfit-font">
+            <span class="hero-connector">Before</span><span class="gradient-text">Treatment.</span>
+          </span>
+          <span class="hero-powered">Powered by Action.</span>
         </h1>
 
         <div class="hero-footer reveal">
@@ -116,7 +117,6 @@
               <span>View Works</span>
               <i data-lucide="arrow-up-right"></i>
             </a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-subtitle outfit-font">01 / ABOUT ME</span>
-          <h2 class="section-title">바이오 R&D 및 품질 전문가 신현경을 소개합니다</h2>
+          <h2 class="section-title">"진단이 치료보다 먼저다"</h2>
           <div class="header-line"></div>
         </div>
 
@@ -150,13 +150,13 @@
             </div>
             <div class="value-quote">
               <span class="quote-mark">“</span>
-              <p id="about-quote">“진단이 치료보다 먼저입니다. 임상에 대한 깊은 이해와 능동적 실행력으로 바이오의 미래를 설계하겠습니다.”</p>
+              <p id="about-quote">“부족함을 알고 채우기 위해 도전을 통해 새로운 발전을 이루겠습니다.”</p>
             </div>
           </div>
 
           <!-- Right: Narrative Profile -->
           <div class="about-content reveal">
-            <h3 class="about-name outfit-font" id="about-name-en">Hyeon-gyeong Shin</h3>
+            <h3 class="about-name outfit-font" id="about-name-en">Shin Hyungyeong</h3>
             <h4 class="about-role" id="about-role-title">Bio R&D & QA Specialist</h4>
 
             <p class="about-bio" id="about-bio-text">
@@ -179,14 +179,6 @@
               </div>
             </div>
 
-            <!-- Call to Actions -->
-            <div class="about-actions">
-              <button class="btn btn-primary" id="btn-download-resume">
-                <i data-lucide="download"></i>
-                <span>이력서 인쇄 / 다운로드</span>
-              </button>
-              <a href="#contact" class="btn btn-outline">협업 문의하기</a>
-            </div>
           </div>
         </div>
       </div>
@@ -266,10 +258,6 @@
           <div class="filter-tab-container">
             <button class="filter-tab active" data-filter="all">All</button>
             <button class="filter-tab" data-filter="web">Web App</button>
-            <button class="filter-tab" data-filter="cardnews">Card News</button>
-            <button class="filter-tab" data-filter="video">Video</button>
-            <button class="filter-tab" data-filter="music">Audio Synth</button>
-            <button class="filter-tab" data-filter="image">Graphic Artwork</button>
             <div class="filter-tab-glider" id="tab-glider"></div>
           </div>
         </div>
@@ -312,73 +300,6 @@
       </div>
     </section>
 
-    <!-- 7. CONTACT SECTION -->
-    <section id="contact" class="contact-section section-padding">
-      <div class="container">
-        <div class="contact-grid">
-
-          <!-- Left side: Social Links & Title -->
-          <div class="contact-info reveal">
-            <span class="section-subtitle outfit-font">06 / GET IN TOUCH</span>
-            <h2 class="contact-title">Let's build<br>a safer future.</h2>
-            <p class="contact-desc">
-              꼼꼼한 품질 보증 업무 제안, 인턴십 및 정규직 채용 기회, 혹은 식품 화학/미생물 분석 기술에 대한 네트워킹은 언제든지 환영합니다. 아래 폼을 작성하시거나 다이렉트 이메일로 연락해 주세요.
-            </p>
-
-            <div class="contact-status-box">
-              <span class="status-dot pulsing"></span>
-              <span class="status-msg" id="contact-status-msg">현재 협업 및 채용 가능 상태</span>
-            </div>
-
-            <div class="social-channels">
-              <a href="#" class="social-link" id="contact-email" target="_blank" aria-label="Email"><i
-                  data-lucide="mail"></i></a>
-              <a href="#" class="social-link" id="contact-github" target="_blank" aria-label="GitHub"><i
-                  data-lucide="github"></i></a>
-              <a href="#" class="social-link" id="contact-instagram" target="_blank" aria-label="Instagram"><i
-                  data-lucide="instagram"></i></a>
-              <a href="#" class="social-link" id="contact-behance" target="_blank" aria-label="Behance"><i
-                  data-lucide="external-link"></i></a>
-              <a href="#" class="social-link" id="contact-linkedin" target="_blank" aria-label="LinkedIn"><i
-                  data-lucide="linkedin"></i></a>
-            </div>
-          </div>
-
-          <!-- Right side: Custom Contact Form -->
-          <div class="contact-form-container reveal">
-            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mock" method="POST">
-              <div class="form-group">
-                <label for="form-name" class="form-label">보내시는 분 이름</label>
-                <input type="text" id="form-name" name="name" class="form-input" placeholder="성함 또는 기업명을 입력해주세요"
-                  required>
-              </div>
-
-              <div class="form-group">
-                <label for="form-email" class="form-label">답변 받으실 이메일 주소</label>
-                <input type="email" id="form-email" name="email" class="form-input" placeholder="example@email.com"
-                  required>
-              </div>
-
-              <div class="form-group">
-                <label for="form-message" class="form-label">문의 내용</label>
-                <textarea id="form-message" name="message" class="form-textarea"
-                  placeholder="제안하고 싶으신 협업 아이디어나 채용 공고에 대해 적어주세요" required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-submit">
-                <span>메시지 보내기</span>
-                <i data-lucide="send"></i>
-              </button>
-            </form>
-            <div id="form-success-alert" class="form-alert success">
-              <i data-lucide="check-circle"></i>
-              <span>메시지가 성공적으로 전송되었습니다! 곧 연락해 드릴게요.</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
   </main>
 

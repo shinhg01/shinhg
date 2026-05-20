@@ -1,13 +1,13 @@
-// central portfolio configuration system for 신현경 (Shin Hyeon-gyeong)
+// central portfolio configuration system for 신현경 (Shin Hyungyeong)
 const PORTFOLIO_CONFIG = {
   profile: {
     name: "신현경",
-    englishName: "Hyeon-gyeong Shin",
-    title: "Bio R&D & QA Specialist",
+    englishName: "Shin Hyungyeong",
+    title: "바이오 R&D 연구원을 목표로 나아가는, 신현경입니다.",
     subTitle: "임상적 이해와 능동적 실행력을 갖춘 바이오 품질·연구 전문가",
     statusBadge: "🟢 바이오 R&D & QA 신입 채용 지원",
     status: "active", // active, flexible, closed
-    bio: "저는 부족함을 알고 스스로 채워나가는 도전자이자, '진단이 치료보다 먼저다'라는 굳은 신념을 지닌 바이오 R&D 및 QA 전문가 신현경입니다. 식품영양학 전공자로서 바이오 직무에 도전하며, 전공의 한계를 뛰어넘기 위해 세 가지 핵심 역량 축을 스스로 빌드업해 왔습니다.\n\n첫째, 겨울방학 동안 바이오 생산장비 부트캠프에 자발적으로 참여해 GMP 기초이론, 정제 및 캡슐 제조 실습, 이화학 품질관리(QC) 실습을 수행했습니다. 둘째, AI/데이터 역량의 결합이 미래 R&D에 필수적이라 판단해 VIBE 코딩 공모전(대상 및 최우수상 수상)과 식약처 공공 API 활용 5개 국어 판별 웹(SAFETRIP) 및 복약 대조 시스템(PharmaGuard AI)을 직접 개발해 냈습니다. 셋째, 캡스톤 프로젝트에 자원해 교수님과 1대1로 단백질 정제부터 Western Blot(1차/2차 항체 최적화, 블로킹 조건 변조, 비특이 밴드 제어)까지 R&D의 핵심인 반복과 최적화 프로세스를 직접 체득했습니다.\n\n영양생화학, 인체생리학, 임상영양학을 이수하며 HbA1c가 왜 당뇨의 지표인지, TSH가 왜 기초대사율과 연결되는지 등 인체의 생리적 기전과 임상적 의미를 명확히 이해하고 있습니다. 이러한 임상적 통찰과 실행력을 바탕으로 영양학적 기반으로 바이오 산업을 이끌겠습니다.",
+    bio: "식품영양학을 전공하며 HbA1c가 왜 당뇨의 지표인지, TSH가 왜 기초대사율과 연결되는지를 배웠습니다. 저는 이 임상적 이해가 진단키트를 만드는 사람에게 가장 강력한 무기라고 생각합니다. 단순히 수치를 측정하는 것을 넘어, 그 수치가 가진 의미까지 설계할 수 있기 때문입니다. 전공의 한계를 느낄 때마다 기다리지 않고 직접 채워온 도전자로서, 실험·현장·데이터 세 가지 축을 스스로 빌드업하며 바이오 R&D 연구원을 향해 나아가고 있습니다.\n\n🧪 실험 역량\n캡스톤 프로젝트에서 교수님과 1대1로 단백질 정제부터 Western Blot까지 전 과정 수행. 1차·2차 항체 최적화, 블로킹 조건 변경, 비특이 밴드 제어를 통해 R&D의 본질인 반복과 최적화를 직접 체득.\n\n🏭 현장 실무\n바이오 생산장비 부트캠프(2주) 수료. GMP 기초이론, 정제·캡슐 제조 실습, 품질관리 실습을 통해 R&D에서 생산으로 이어지는 공정 전체를 경험.\n\n🤖 AI·데이터\nVIBE 코딩 활용 공모전 대상·최우수상 수상. 식약처 공공 API 활용 5개국어 식품 판별 웹(SAFETRIP), 복약 대조 시스템(PharmaGuard AI) 직접 개발. R언어로 식의약품 1,000개 데이터 분석.\n\n영양학의 임상적 통찰 + 실험 역량 + AI 데이터 분석.\n세 가지를 하나로 연결해 바이오 R&D 연구원으로 성장하겠습니다.",
     education: [
       {
         school: "한림대학교 (Hallym University)",
@@ -40,7 +40,7 @@ const PORTFOLIO_CONFIG = {
     ],
     audio: [
       { name: "바이오 생산장비 운용", level: 85, status: "정제/캡슐 제조실습" },
-      { name: "진단기기 생산현장 실습", level: 80, status: "GMP 공정견학 완료" }
+      { name: "바이오 생산 장비 견학", level: 80, status: "GMP 공정견학 완료" }
     ],
     web: [
       { name: "R 언어 기반 데이터분석", level: 85, status: "1000+건 API 통계분석" },
@@ -158,157 +158,7 @@ const PORTFOLIO_CONFIG = {
         result: "Netlify 기반 실시간 영업 관제 대시보드 런칭을 완료하여 관리자가 재고 파악을 위해 자재창고를 방문하는 빈도를 줄이고 수치 분석 효율을 극대화했습니다.",
         retrospective: "대량의 데이터 테이블을 모바일 화면에서도 찌그러짐 없이 횡스크롤로 우아하게 볼 수 있도록 하는 반응형 CSS 레이아웃 노하우를 습득하였으며, 통계 데이터를 시각화하는 프레젠테이션 설계 역량을 크게 강화했습니다."
       }
-    },
-
-    // CARD NEWS PROJECTS (3 items)
-    {
-      slug: "haccp-7-principles",
-      title: "식품 제조 현장 작업자를 위한 HACCP 7원칙 12절차 실무 매뉴얼 가이드",
-      category: "cardnews",
-      thumbnail: "card-haccp.svg",
-      description: "작업장의 현장 위생 사고 제로화를 목표로 복잡한 HACCP 위해요소 분석 및 CCP 수립 절차를 가독성 높게 정제한 실무 카드뉴스 기획 및 제작",
-      role: "컨셉 기획, 위해물질 시각 메타포 개발, 인포그래픽 설계 (100%)",
-      tools: ["Figma", "Illustrator"],
-      year: 2025,
-      duration: "2025.10 (1주)",
-      slides: [
-        "card-haccp-1.svg",
-        "card-haccp-2.svg",
-        "card-haccp-3.svg",
-        "card-haccp-4.svg"
-      ],
-      details: {
-        background: "식품공학 종합 설계 과제 및 현장 현업자 교육용 교재로 활용하기 위해 인스타그램 및 사내 인트라넷 피드에 최적화된 1:1 슬라이드를 디자인했습니다.",
-        concept: "두껍고 지루한 텍스트 매뉴얼을 배제하고 생물학적 위해요소(세균), 화학적 위해요소(잔류농약), 물리적 위해요소(금속사)를 아이콘화하여 3단계 위험도로 직관 배치했습니다.",
-        outcome: "교내 캡스톤 디자인 포스터 부문 장려상 수상 및 협력 유통업체 제조 현장 4곳의 아침 조회 교육 교재로 정식 배포되어 현장 위생 수칙 미준수 건수가 전월 대비 42% 감소하는 실무 성과를 기록했습니다."
-      }
-    },
-    {
-      slug: "food-labeling-law",
-      title: "식품 등의 표시광고에 관한 법률 개정안 핵심 요약 인포그래픽 캠페인",
-      category: "cardnews",
-      thumbnail: "card-law.svg",
-      description: "소비자 혼선을 방지하고 중소 영세 식품 제조업체의 표시법 위반 행정처분 방지를 위해 소비기한 표시제 의무사항을 흐름도로 묘사한 가이드",
-      role: "식품위생 규정 리서치, 텍스트 라이팅, 카드 디자인 (100%)",
-      tools: ["Illustrator", "Photoshop"],
-      year: 2025,
-      duration: "2025.11 (1주)",
-      slides: [
-        "card-law-1.svg",
-        "card-law-2.svg",
-        "card-law-3.svg",
-        "card-law-4.svg"
-      ],
-      details: {
-        background: "식품안전의 날을 기념하여 영세 제조 공장 실무자 및 일반 소비자를 대상으로 식약처 고시 개정안을 신속히 확산시키기 위한 SNS 캠페인으로 기획되었습니다.",
-        concept: "법률 용어의 딱딱함을 줄이기 위해 차분한 메디컬 에코그린과 뉴트럴 그레이 배색을 차용하고, 유통기한과 소비기한의 차이점을 파스텔톤 우유갑 일러스트 배율로 묘사했습니다.",
-        outcome: "식품 품질관리 네이버 카페 및 영양사 커뮤니티에 업로드되어 누적 조회수 18,000회를 돌파했으며, 관련 행정고시 필수 준수율 제고에 크게 기여했다는 호평을 받았습니다."
-      }
-    },
-    {
-      slug: "foodborne-bacteria-control",
-      title: "핵심 식중독 원인균(황색포도상구균, 살모넬라)별 제어 임계값 튜토리얼",
-      category: "cardnews",
-      thumbnail: "card-bacteria.svg",
-      description: "대형 급식소 및 조리 시설에서 온도 관리 미흡으로 다발하는 식중독 균의 사멸 조건(열처리 시간/온도) 및 증식 억제 환경을 시각화한 그래픽 가이드",
-      role: "식품미생물학 데이터 추출, 사멸 동력학 그래프 시각화, 그래픽 제작 (100%)",
-      tools: ["Figma", "Photoshop"],
-      year: 2026,
-      duration: "2026.01 (4일)",
-      slides: [
-        "card-bacteria-1.svg",
-        "card-bacteria-2.svg",
-        "card-bacteria-3.svg",
-        "card-bacteria-4.svg"
-      ],
-      details: {
-        background: "식품영양학 미생물 실험실 안전 수칙 가이드라인 및 조리 실무원 위생 교육의 효율성 극대화를 위해 특별 기획된 고해상도 교육 카드뉴스입니다.",
-        concept: "보이지 않는 세균의 온도 반응성을 네온 파이어 레드(Heat)와 아이스 사이안 블루(Cold)의 선명한 고대비로 매핑하여 임계 한계값 영역을 한눈에 식별하도록 표현했습니다.",
-        outcome: "대학 임상영양 학술제 인포그래픽 우수 자료로 선정되어 학부 학과 로비에 영구 대자보 포스터로 게시되었으며, 50회 이상의 아카이브 스크랩을 유도했습니다."
-      }
-    },
-
-    // VIDEO PROJECTS (2 items)
-    {
-      slug: "smart-haccp-sensor-manual",
-      title: "스마트 HACCP 무선 센서 가동 및 CCP 이탈 대응 공정 매뉴얼 영상",
-      category: "video",
-      thumbnail: "video-sensor.svg",
-      description: "무선 온도 데이터 로거의 한계기준 이탈 모의 상황 발생 시, 제조 공정 자동 밸브 차단 및 원인 규명 개선 조치 프로세스를 3D 그래픽으로 모션 연출한 실무 교육 영상",
-      role: "시나리오 작성, 온도 이탈 연출, 오디오 내레이션 편집 (100%)",
-      tools: ["After Effects", "Premiere Pro", "Photoshop"],
-      year: 2025,
-      duration: "2025.12 (3주)",
-      details: {
-        client: "스마트 제조혁신 지원사업 공정 시뮬레이션 (산학 연계)",
-        concept: "기술적 완벽성과 신속성. 차갑고 균일하게 회전하는 제조 라인의 메탈 그레이 톤에 온도 과열을 상징하는 전기 오렌지 알림을 대조하고, 미세한 경고 비프음에 어울리는 타임라인 전개로 공정 흐름을 깔끔하게 편집했습니다.",
-        storyboard: "0:00~0:10 멸균 챔버 자동 온도 데이터 로거가 정상 범위(121°C 이상)를 추적하는 앰비언트 상태 연출 -> 0:11~0:25 압력 누출로 인한 급격한 온도 하락 및 경고 발령 (HUD 알림 디스플레이 활성화) -> 0:26~0:35 개선조치 매뉴얼에 따라 원료 공급 차단 밸브 폐쇄 및 불합격품 격리 공정 3D 뎁스 묘사 -> 0:36~0:45 개선 결과 입력 시스템 연동과 함께 클린한 브랜드 슬로건 표출",
-        audio: "공장 가동 화이트 노이즈 사운드와 센서 경고 비프음, 저작권 프리 하이테크 테크노 앰비언스를 믹스처"
-      }
-    },
-    {
-      slug: "food-hygiene-campaign",
-      title: "식품 위생 '식자재 교차오염의 나비효과' 30초 캠페인 광고 영상",
-      category: "video",
-      thumbnail: "video-hygiene.svg",
-      description: "비위생적인 칼·도마 사용으로 인한 식중독균의 미량 전파가 대형 집단 급식소 전체의 오염으로 확산되는 인과 과정을 감각적인 파스텔 아트와 키프레임 애니메이션으로 연출한 캠페인 영상",
-      role: "배경 일러스트 그래픽 설계, 전파 경로 시뮬레이션 모션, 오디오 이펙팅 (100%)",
-      tools: ["After Effects", "Illustrator", "Audition"],
-      year: 2025,
-      duration: "2025.07 (2주)",
-      details: {
-        client: "식약처 청년 에코/위생 크리에이터 공모전 출품작",
-        concept: "공포감을 주지 않고 가독성을 높이는 교차오염의 시각화. 무겁고 혐오스러운 식중독균의 현미경 확대 이미지 대신, 반짝이는 펄 가루 형태의 형광 입자 메타포를 도입하여 오염원의 확산을 부드러우면서도 단호하게 표현했습니다.",
-        storyboard: "0:00~0:08 어류를 손질한 뒤 씻지 않은 칼로 즉석 양배추를 썰 때 미세 형광 펄 입자가 채소로 옮겨붙는 정밀 줌인 -> 0:09~0:18 샐러드 볼 전체로 펄 입자가 복제 증식되는 3D 뎁스 레이아웃 연출 -> 0:19~0:30 깨끗이 세척·소독한 뒤 재식재료를 다루는 올바른 위생 가이드라인 대조 제시와 아웃트로 줌아웃",
-        audio: "도마 위의 경쾌한 칼질 소리 SFX에 차분한 일렉 피아노 멜로디, 따뜻한 성우 내레이션 보이스를 조화롭게 레이어링"
-      }
-    },
-
-    // MUSIC PROJECTS (2 items - Simulated using Web Audio API Synths)
-    {
-      slug: "hplc-lab-ambient",
-      title: "Food Tech Lab Ambient (HPLC 가동 백색소음 신디사이저)",
-      category: "music",
-      thumbnail: "music-hplc.svg",
-      description: "HPLC 정량 분석 실험실의 고요한 공기와 분석 기기의 미세한 모터 회전, 용매 흐름음을 삼각파와 아날로그 펄스 발진으로 표현한 집중용 미니멀 앰비언트 신스 루프",
-      role: "실험실 물리 노이즈 음역 분석, LFO 주기 변조 설계, 신스 합성 (100%)",
-      tools: ["Logic Pro X", "Serum (Wavetable Synth)", "Web Audio API Synthesis Engine"],
-      year: 2026,
-      genre: "Laboratory White Noise Ambient",
-      bpm: 98,
-      daw: "Logic Pro X & Web Audio API",
-      details: "품질 분석 연구원의 집중 상태를 자극하는 소리를 설계했습니다. HPLC 기기가 화학 잔류 물질을 검출하며 규칙적으로 주입하는 미세 피스톤 스트로크를 삼각파 오실레이터의 저주파 필터 변조(LFO)로 매핑하여 영롱한 하모니를 뽑아냈습니다."
-    },
-    {
-      slug: "smart-factory-pulse",
-      title: "Smart Factory Pulse (자동화 무균 충전기 작동 신스웨이브)",
-      category: "music",
-      thumbnail: "music-factory.svg",
-      description: "초당 20병의 음료를 완벽한 무균 상태에서 충전 밀봉하는 초고속 충전 노즐의 역동적인 자동화 기계 패턴을 120 BPM 속도감으로 합성한 레트로 신스웨이브 트랙",
-      role: "기계 타격 패턴 드럼 시퀀싱, 베이스 신스 노이즈 디자인, 믹싱 (100%)",
-      tools: ["Ableton Live", "Diva (Analog Model Synth)", "Decimort 2 Bitcrusher"],
-      year: 2025,
-      genre: "Industrial Synthwave / Outrun",
-      bpm: 120,
-      daw: "Ableton Live 11",
-      details: "HACCP 공정 중 급속 가열 멸균 후 무균 상태를 유지하며 뿜어내는 가스 소독 벤트와 피스톤 실린더 스트로크를 사이드체인 컴프레서의 강력한 리드미컬 펌핑 테크닉으로 재현하여 역동성을 더했습니다."
     }
-  ],
-
-  // 12 HIGH-FIDELITY GRAPHIC ARTWORKS (Realigned to Food Chemistry & Safety themes)
-  graphics: [
-    { id: 1, title: "HPLC Chromatogram Peaks", tool: "Photoshop & Blender", year: 2026, img: "graphic-1.svg", desc: "검출 성분의 흡광도 파장에 따른 이탈 수치를 3차원 네온 그라디언트 절벽으로 예술화한 정밀 포스터" },
-    { id: 2, title: "Shelf-Life Arrhenius Model", tool: "Illustrator & Cinema4D", year: 2025, img: "graphic-2.svg", desc: "식품의 저장 온도에 따른 유통기한 예측 반응 속도 상수의 상관관계를 크롬 금속 곡선으로 정제한 실험 아트" },
-    { id: 3, title: "Moire Bio-Sensor Array", tool: "Figma", year: 2026, img: "graphic-3.svg", desc: "병원균 신속 진단 키트 표면의 미세 채널과 고글라스 바이오 센서 반사를 묘사한 뉴모피즘 다차원 패턴" },
-    { id: 4, title: "LIMS Dashboard Grid", tool: "Photoshop", year: 2025, img: "graphic-4.svg", desc: "실험실 정보 관리 시스템의 거대한 이화학/미생물 분석 테이블을 우주 먼지 파티클 속에 투영한 디지털 아트" },
-    { id: 5, title: "Clean Room Air Shower HUD", tool: "Illustrator", year: 2025, img: "graphic-5.svg", desc: "반도체급 청정도를 유지하는 식품 무균 포장실 에어샤워 카운트다운의 긴박감을 스위스 모던 타이포로 연출한 그래픽" },
-    { id: 6, title: "Bacterial Colony Moire", tool: "Illustrator", year: 2026, img: "graphic-6.svg", desc: "페트리 디쉬 위에 콜로니 카운터로 검출해 낸 식중독 유해 세균 군락의 융합 현상을 흑백 점박이 하프톤으로 묘사" },
-    { id: 7, title: "Metal Detector Glitch Effect", tool: "Photoshop & After Effects", year: 2025, img: "graphic-7.svg", desc: "공정 최종 라인에서 금속 이물(Fe, Sus)이 감지되어 벨트가 비상 정지하는 경보의 순간을 분열된 글리치 노이즈로 묘사" },
-    { id: 8, title: "HACCP CCP Critical Point Oasis", tool: "Blender & Photoshop", year: 2026, img: "graphic-8.svg", desc: "완벽히 통제된 임계 범위(Oasis) 속에 부유하여 미생물적 위해가 완전히 정화되는 가상의 멸균 구체를 연출한 3D 아트" },
-    { id: 9, title: "Retro Lab Scale Interface", tool: "Figma & Photoshop", year: 2025, img: "graphic-9.svg", desc: "80년대 정밀 정밀 분석 저울과 화학 지시약 방울 반응을 아날로그 도트 도해 스타일로 매핑한 가상 화학 패널" },
-    { id: 10, title: "Fluid Homogenizer Moire", tool: "Illustrator", year: 2026, img: "graphic-10.svg", desc: "우유의 지방구를 균질하게 분쇄하며 가해지는 미세 초고압 유체의 에너지 흐름을 정교한 무아레 곡선으로 승화한 작품" },
-    { id: 11, title: "Deconstructed Food Matrix", tool: "Photoshop", year: 2025, img: "graphic-11.svg", desc: "식품 복합 원료 매트릭스 내부의 결합 상태를 고배율 전자현미경의 단면 구조로 거칠게 해체하여 표현한 입체파적 콜라주" },
-    { id: 12, title: "Chrome Glass Pipette Drop", tool: "Cinema4D", year: 2026, img: "graphic-12.svg", desc: "크로마토그래피용 정밀 마이크로 피펫 끝에서 중력에 의해 낙하하는 고순도 시약 방울의 점성을 메탈 크롬 광택으로 렌더링" }
   ],
 
   // 5 AWARDS (Glowing vertical timeline - Real student achievements)
@@ -355,139 +205,52 @@ const PORTFOLIO_CONFIG = {
     }
   ],
 
-  // 4 LAB ARTICLES (MDX reader format - Chemistry & Microbiology & Web Tech integration)
+  // Lab notes — 실제 내용으로 채워주세요
   lab: [
     {
-      slug: "hplc-pesticide-quantification",
-      title: "HPLC(고성능 액체 크로마토그래피)를 이용한 유기농산물 잔류 농약 검출 정량 정밀 분석",
-      category: "design-research",
-      summary: "시료 전처리(QuEChERS법) 단계를 거쳐 HPLC 기기 분석 상의 머무름 시간(Retention Time) 및 자외선(UV) 검출기 스펙트럼 분석을 통해 오차범위를 극소화하는 실험 분석 가이드",
-      tags: ["HPLC 분석", "잔류농약 정량", "식품화학", "오차 분석"],
-      date: "2026-04-12",
-      readingTime: 6,
-      content: `### 1. 식품화학 분석과 QuEChERS 시료 전처리
-잔류 농약 분석의 신뢰도는 오염된 매트릭스 속에서 분석 대상 성분을 완벽히 추출해 내는 **전처리 단계**에 달려 있습니다. 
-이번 실험에서는 신속하고 간편한 잔류농약 추출법인 **QuEChERS(Quick, Easy, Cheap, Effective, Rugged, Safe)** 표준 프로토콜을 도입하여 고수분 엽채류 샘플의 지방 및 유기 유해 성분을 깔끔하게 배제하는 전처리 과정을 성공적으로 수행했습니다.
-샘플을 균질기(Homogenizer)로 마이크로화하고, Acetonitrile과 분배 염(MgSO₄, NaCl)을 가해 신속 원심 분리하여 정제 상층액을 정교하게 수집했습니다.
+      slug: "how-to-write-lab-note",
+      title: "✏️ 이곳에 나만의 학습 노트를 작성해보세요",
+      category: "guide",
+      summary: "config.js의 lab 배열에 항목을 추가하면 이 섹션에 카드로 표시됩니다. 아래 작성 가이드를 읽고 실제 경험한 실험, 공부 내용, 프로젝트 회고 등을 자유롭게 기록해보세요.",
+      tags: ["작성 가이드", "Lab Notes"],
+      date: "2026-05-21",
+      readingTime: 2,
+      content: `### Lab Note 작성 가이드
 
-### 2. HPLC 컬럼 조건 및 UV 검출 파장 세팅
-고분해 정밀 피크 도출을 위한 기기 분석 시스템 매개변수를 다음과 같이 확립했습니다.
-- **컬럼**: C18 Reversed-Phase Column ($250 \times 4.6 \text{ mm}$, $5\,\mu\text{m}$ 입자 크기)
-- **이동상**: Acetonitrile / Water ($70 : 30$ 부피비, 등용매 용리 Iso-cratic)
-- **유속**: $1.0\text{ mL/min}$
-- **주입량**: $20\,\mu\text{L}$
-- **검출기**: UV-Vis Detector ($254\text{ nm}$ 흡광 파장 세팅)
+#### 어떤 내용을 쓰면 좋을까요?
+- **실험 / 분석 기록** — Western Blot, HPLC, 균 배양 등 직접 수행한 실험 결과와 배운 점
+- **공부 정리** — 수업이나 자격증 공부에서 새롭게 알게 된 개념 (GMP, HACCP, 생화학 등)
+- **프로젝트 회고** — 제작한 웹 앱이나 공모전 출품 후 느낀 점과 개선 아이디어
+- **도전 기록** — 부트캠프, 캡스톤, 인턴 등 새로운 경험에서 배운 것
 
-### 3. 크로마토그램 피크 정량 및 검량선(Calibration Curve) 도출
-표준 잔류 물질의 농도 단계별($0.1$, $0.5$, $1.0$, $5.0$, $10.0\text{ ppm}$) HPLC 분석 면적 비율(Peak Area)을 수집하여 수학적 선형 회귀 분석을 실시했습니다.
-
-| 농도 (ppm) | 머무름 시간 (min) | 피크 면적 ($mAU \cdot s$) | 검출 피크 신뢰도 |
-|---|---|---|---|
-| 0.1 | 4.82 | 125,400 | 양호 |
-| 0.5 | 4.81 | 631,200 | 우수 |
-| 1.0 | 4.83 | 1,268,500 | 완벽 |
-| 5.0 | 4.82 | 6,324,100 | 완벽 (포화 한계 미만) |
-| 10.0 | 4.80 | 12,599,000 | 완벽 (검량 한계) |
-
-선형 회귀 연산 결과 도출된 검량선 방정식은 **$y = 1,260,000x + 2,100$** 이며, 상관계수 **$R^2 = 0.9999$** 라는 극도로 정밀한 신뢰도를 확보했습니다. 
-엽채류 분석 미지 시료의 검출 머무름 시간($4.82\text{ min}$) 면적인 $2,522,100$을 대입하여 시료 내 잔류 농약 농도가 정확히 **$2.00\text{ ppm}$** 검출되었음을 명확히 수학적으로 도출하였고, 이는 허용 한계인 $1.0\text{ ppm}$을 초과하여 부적합 판정을 내리는 완전한 프로세스를 거쳤습니다.`
-    },
-    {
-      slug: "microbe-gompertz-model",
-      title: "Modified Gompertz 수학적 생장 예측 모델을 활용한 주요 식중독균 증식 억제 검증",
-      category: "tool-experiment",
-      summary: "시간과 온도 조건 변화에 따른 병원성 미생물(살모넬라)의 지체기(Lag Phase)와 최대 성장 속도를 비선형 Gompertz 성장 모델식을 적용해 시뮬레이션 및 데이터 시각화",
-      tags: ["미생물 예측 모델", "Gompertz Equation", "SPSS 통계", "D-value 산출"],
-      date: "2026-03-02",
-      readingTime: 4,
-      content: `### 1. 예측 미생물학(Predictive Microbiology)의 필요성
-유통 공정이나 조리 현장에서 특정 온도 편차가 유발되었을 때, 세균이 실제로 기하급수적으로 폭발하는 시점인 **지체기(Lag Phase)**의 끝을 예측하는 것은 급식 위생 및 품질 관리의 핵심 임계 통제점 수립에 직결됩니다. 
-수동 균수 측정법의 시간적 한계를 극복하고자, 생물 수학적 비선형 성장 거동 모델인 **Modified Gompertz 방정식**을 가스 흡광 측정 실험 데이터에 결합하여 수치 시뮬레이션을 구현했습니다.
-
-### 2. Modified Gompertz 수학 공식 및 매개 변수 정의
-미생물의 생장 거동 곡선($N(t)$)은 다음과 같은 수학식으로 결정됩니다:
-
-$$Y(t) = \ln\left(\frac{N(t)}{N_0}\right) = A \cdot \exp\left\{ -\exp\left[ \frac{\mu_{max} \cdot e}{A} (\lambda - t) + 1 \right] \right\}$$
-
-- $N(t)$: 특정 시간 $t$에서의 미생물 밀도
-- $N_0$: 초기 미생물 밀도 접종값
-- $A$: 최대 미생물 생장 잠재량 (Max Asymptotic growth)
-- $\mu_{max}$: 시간당 최대 비생장 속도 (Maximum specific growth rate)
-- $\lambda$: 유도기/지체기 시간 (Lag phase duration, hr)
-- $e$: 자연상수 ($2.7182...$)
-
-### 3. 실험 설계 및 10°C vs 25°C 생장 예측 그래프 매핑
-살모넬라 균을 가상의 진탕 배양 시스템에 주입하고 각각 10°C 저온 환경과 25°C 상온 환경에서 48시간 동안 생존 상태를 추적했습니다.
-- **10°C 저온군**: 지체기($\lambda$)가 **18.5시간**으로 길게 연장되었으며 최대 생장 속도($\mu_{max}$)는 **$0.08\text{ hr}^{-1}$**로 억제되었습니다.
-- **25°C 상온군**: 지체기($\lambda$)가 단 **2.2시간**으로 단축되었고 $\mu_{max}$는 **$1.15\text{ hr}^{-1}$**로 14배 폭발했습니다.
-
-이 통계 데이터를 바탕으로 식품의 상온 방치 시간이 **2.0시간을 초과하는 즉시** 미생물 위험 경보를 발령해야 한다는 실무적이고 꼼꼼한 통제 한계값(Critical Limits)의 과학적 근거를 성공적으로 입증했습니다.`
-    },
-    {
-      slug: "websocket-haccp-binding",
-      title: "스마트 HACCP 온도 센서 데이터 수집을 위한 웹소켓 실시간 바인딩 분석",
-      category: "tutorial",
-      summary: "공장 생산설비 무선 센서 로거로부터 수집되는 고주파 온도 데이터를 지연 없는 실시간 관제 화면에 매핑하기 위한 WebSockets 이벤트 리스너 최적화 연구",
-      tags: ["WebSockets", "IoT 센서", "Smart HACCP", "실시간 관제"],
-      date: "2026-01-25",
-      readingTime: 5,
-      content: `### 1. B2B 스마트 팩토리 실시간 요구 규격
-스마트 HACCP(Smart Hazard Analysis and Critical Control Point) 연동 표준은 연속 온도 기록 장치로부터 매 5초 단위로 데이터를 수집하여 기록의 조작 가능성을 사전 차단해야 합니다. 
-매 수초 단위의 다차원 센서(가열 챔버 12개 채널) 데이터를 일반 HTTP 폴링 방식으로 리퀘스트하면 공장 게이트웨이에 네트워크 트래픽 과부하를 줍니다. 
-이를 해결하기 위해 서버와 브라우저 간에 **실시간 영속 양방향 커넥션**을 수립하는 **WebSockets 프로토콜**을 적용했습니다.
-
-### 2. 센서 데이터 처리 및 메모리 누수 방지 이벤트 루프
-수만 개의 타임스탬프 데이터가 차트에 연속 바인딩되면 가비지 컬렉터(GC) 활성화로 인해 화면 렉 현상이 초래됩니다. 이를 경감시키기 위해 본 튜토리얼에서는 다음과 같은 바닐라 최적화 스니펫을 검증했습니다:
+#### 작성 형식 (config.js → lab 배열에 추가)
 
 \`\`\`javascript
-// 링 버퍼(Ring Buffer) 개념을 도입한 실시간 온도 로깅 이벤트 리스너
-const MAX_DATA_POINTS = 50;
-let temperatureQueue = new Float32Array(MAX_DATA_POINTS);
-let queueIndex = 0;
+{
+  slug: "고유-영문-id",         // 예: "western-blot-review"
+  title: "노트 제목",
+  category: "카테고리",         // 예: "실험 기록", "공부 정리", "프로젝트 회고"
+  summary: "카드에 표시될 한 줄 요약",
+  tags: ["태그1", "태그2"],
+  date: "YYYY-MM-DD",
+  readingTime: 3,              // 예상 읽기 시간 (분)
+  content: \`
+### 소제목
+본문 내용을 여기에 작성합니다.
 
-socket.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  const currentTemp = data.temperature;
-  
-  // 고정 메모리 영역인 Float32Array에 순환 삽입
-  temperatureQueue[queueIndex] = currentTemp;
-  queueIndex = (queueIndex + 1) % MAX_DATA_POINTS;
-  
-  // 이탈 감지 즉시 비동기 콜백 트리거
-  if (currentTemp < 121.0) {
-    triggerCCPAlarm(data.channelId, currentTemp);
-  }
-  
-  // 차트 UI 데이터 윈도윙 업데이트 처리...
-};
+- **핵심 포인트**: 설명
+- 배운 점, 느낀 점, 결과 등을 자유롭게 기록하세요.
+  \`
+}
 \`\`\`
 
-### 3. 기술적 의의
-이와 같은 순수 자바스크립트 버퍼링 가속을 통해, 브라우저 스크립팅 렌더링 프레임을 저사양 현장 전광판 태블릿에서도 **부드러운 60 FPS**로 방어하는 데 성공했습니다. IT 기술을 적극 접목한 현대적 식품 안전 모니터링 시스템의 핵심 백본 아키텍처를 완벽히 이해하는 성과를 이룩했습니다.`
-    },
-    {
-      slug: "food-qa-document-knowhow",
-      title: "식품위생법 개정에 따른 신제품 QA 문서(품목제조보고서, 유통기한 설정 사유서) 작성 노하우",
-      category: "tutorial",
-      summary: "원료 배합 규정 준수 여부를 확인하는 배합비 작성 양식 분석과 과학적 유통기한 연장 실험 데이터를 기반으로 유통기한 설정 사유서를 안전하게 작성하는 실무 테크닉",
-      tags: ["식품위생법", "QA 문서화", "품목제조보고서", "유통기한 설정"],
-      date: "2025-11-18",
-      readingTime: 5,
-      content: `### 1. 품질 보증(QA) 문서 작성의 본질적 목표
-식품 회사의 QA 직무는 단순한 관리를 넘어 국가 행정 규제 리스크를 제로화하는 관문입니다. 
-신제품 출시 전 관할 지방자치단체장에 보고해야 하는 **품목제조보고서**와 식약처 안심 기준에 상응하는 **유통기한 설정 사유서**의 허위 또는 오기는 즉각적인 제품 전량 회수, 폐기 및 판매 금지 등의 막대한 행정처분으로 이어지기 때문입니다.
-
-### 2. 품목제조보고서 배합비 검증 핵심 체크리스트
-- **원료명 및 배합비**: 배합 비율의 합이 정확히 **100.00%**로 완벽하게 떨어지는지 꼼꼼하게 검증합니다.
-- **식품첨가물 공전 대조**: 첨가물의 최대 허용 잔류량(예: 보존료 안식향산나트륨 $0.6\text{ g/kg}$ 이하)을 엄격하게 대조하여 한계치를 단 0.01%도 초과하지 않도록 검사합니다.
-- **알레르기 표시 대상**: 원료 중 대두, 밀, 메밀, 우유 등 22대 알레르기 물질이 포함되어 있는 경우 반드시 별도의 굵은 고대비 테두리 칸 안에 원천 표시 명칭을 정확히 기재합니다.
-
-### 3. 유통기한 설정 실험 보고서 및 사유서 작성 3단계
-1. **실험 조건 정의**: 실제 유통 조건 온도($10^\circ\text{C}$ 기준)보다 가혹한 온도 조건($25^\circ\text{C}$, $35^\circ\text{C}$) 하에서 가속 저장 실험(Accelerated Storage Test)을 진행합니다.
-2. **지표 측정**: 저장 시간 경과에 따라 산패도(산가, 과산화물가), 일반 세균수, 관능 검사 수치 변화를 수집하고, 품질 한계점(Quality Limit)을 설정합니다.
-3. **안전 계수(Safety Factor) 산출**: 가속 실험을 통해 얻은 품질 유지 기간이 12개월일 때, 유통 공정상의 뜻밖의 상온 변수를 대비하여 법정 안전 계수 **$0.7 \sim 0.8$**을 필수로 곱하여 최종 권장 유통기한을 **8개월**로 단축 보수 설정하여 사유서에 기술합니다.
-
-이와 같은 꼼꼼하고 데이터 기반의 분석적 문서 작성 능력을 갖춘 인재만이 식음료 비즈니스의 무결점 법적 컴플라이언스를 방어할 수 있습니다.`
+#### 카테고리 예시
+| 카테고리 | 어울리는 내용 |
+|---|---|
+| 실험 기록 | 직접 수행한 실험 과정과 결과 |
+| 공부 정리 | 수업·자격증·책에서 정리한 개념 |
+| 프로젝트 회고 | 제작물 완성 후 돌아보는 기록 |
+| 도전 기록 | 새로운 경험과 성장 스토리 |`
     }
   ]
 };

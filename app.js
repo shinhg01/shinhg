@@ -156,13 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSkillBars("skills-audio", config.skills.audio);
   renderSkillBars("skills-web", config.skills.web);
 
-  // Render Contact channels links
-  document.getElementById("contact-email").href = `mailto:${config.profile.contact.email}`;
-  document.getElementById("contact-github").href = config.profile.contact.github;
-  document.getElementById("contact-instagram").href = config.profile.contact.instagram;
-  document.getElementById("contact-behance").href = config.profile.contact.behance;
-  document.getElementById("contact-linkedin").href = config.profile.contact.linkedin;
-
   // Render Works (Filterable gallery grid)
   const worksGrid = document.getElementById("works-grid");
 
@@ -172,34 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     setTimeout(() => {
       let filteredProjects = [];
-      
+
       if (filter === "all") {
-        // Display web, cardnews, video, music, and first 4 graphics
-        filteredProjects = [
-          ...config.projects,
-          ...config.graphics.slice(0, 4).map(g => ({
-            slug: `graphic-${g.id}`,
-            title: g.title,
-            category: "image",
-            thumbnail: g.img,
-            description: g.desc,
-            role: "Graphic Artwork Designer (100%)",
-            tools: [g.tool],
-            year: g.year
-          }))
-        ];
-      } else if (filter === "image") {
-        worksGrid.classList.add("masonry-view");
-        filteredProjects = config.graphics.map(g => ({
-          slug: `graphic-${g.id}`,
-          title: g.title,
-          category: "image",
-          thumbnail: g.img,
-          description: g.desc,
-          role: "Graphic Design",
-          tools: [g.tool],
-          year: g.year
-        }));
+        filteredProjects = config.projects;
       } else {
         filteredProjects = config.projects.filter(p => p.category === filter);
       }
@@ -1058,41 +1026,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 11. PRINT / DOWNLOAD RESUME BUTTON EVENT HANDLER ---
-  const downloadBtn = document.getElementById("btn-download-resume");
-  downloadBtn.addEventListener("click", () => {
-    // Open system browser print overlay
-    window.print();
-  });
 
-  // --- 12. CONTACT FORM SUBMIT HANDLER ---
-  const contactForm = document.getElementById("contact-form");
-  const successAlert = document.getElementById("form-success-alert");
-
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Stop default form redirect
-    
-    const btn = contactForm.querySelector(".btn-submit");
-    const name = document.getElementById("form-name").value;
-    
-    btn.disabled = true;
-    btn.querySelector("span").innerText = "전송 중...";
-    
-    setTimeout(() => {
-      btn.disabled = false;
-      btn.querySelector("span").innerText = "메시지 보내기";
-      
-      // Clear form inputs
-      contactForm.reset();
-      
-      // Trigger glow alert
-      successAlert.style.display = "flex";
-      
-      setTimeout(() => {
-        successAlert.style.display = "none";
-      }, 5000);
-      
-    }, 1500);
-  });
 
 });
