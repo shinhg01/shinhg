@@ -633,6 +633,7 @@ html.light .moon-icon { display: none; }
   .hero-description { font-size: 1rem; }
   .hero-actions { flex-direction: column; width: 100%; }
   .btn { width: 100%; }
+  .skills-grid { grid-template-columns: 1fr; }
 }
 
 /* --- 6. ABOUT ME SECTION --- */
@@ -738,6 +739,35 @@ html.light .moon-icon { display: none; }
   margin-top: 16px;
   margin-bottom: 24px;
 }
+.about-award-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(251,191,36,0.08), rgba(59,130,246,0.06));
+  border: 1px solid rgba(251,191,36,0.25);
+  border-radius: 14px;
+  padding: 14px 20px;
+  margin-bottom: 32px;
+}
+.award-badge-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.award-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.award-badge-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+.award-badge-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
 .about-bio {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -826,9 +856,10 @@ html.light .moon-icon { display: none; }
 /* --- 7. COMPETENCIES & SKILLS SECTION --- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   margin-bottom: 60px;
+  align-items: start;
 }
 
 .skill-card {

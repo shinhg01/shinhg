@@ -962,47 +962,76 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal("modal-lab-reader");
   }
 
-  // Basic lightweight Markdown parser to avoid external parsing libraries
+  // Markdown parser — tables, bold, headers, lists, code
   function parseSimpleMarkdown(mdText) {
     let html = mdText;
 
-    // Parse block code snippets
+    // Code blocks
     html = html.replace(/```javascript([\s\S]*?)```/g, '<pre><code class="language-javascript">$1</code></pre>');
     html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
 
-    // Parse tables
-    html = html.replace(/\|([\s\S]*?)\|\r?\n\|[ :-|]*?\|\r?\n([\s\S]*?)(?=\r?\n\r?\n|\r?\n[^|]|$)/g, (match, header, body) => {
-      const parseRow = (row) => row.split("|").slice(1, -1).map(cell => cell.trim());
-      const ths = parseRow(header).map(h => `<th>${h}</th>`).join("");
-      const trs = body.trim().split("\n").map(row => {
-        const tds = parseRow(row).map(d => `<td>${d}</td>`).join("");
-        return `<tr>${tds}</tr>`;
-      }).join("");
-      return `<table><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table>`;
-    });
+    // Bold and italic (must run before table parsing so bold works inside cells)
+    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-    // Parse subheaders
+    // Tables — line-by-line to avoid regex capture bugs
+    const lines = html.split('\n');
+    let inTable = false;
+    let tableHtml = '';
+    const processedLines = [];
+
+    for (let i = 0; i < lines.length; i++) {
+      const trimmed = lines[i].trim();
+      const isTableRow = trimmed.startsWith('|') && trimmed.endsWith('|');
+      const isSeparator = isTableRow && /^\|[\s|:\-]+\|$/.test(trimmed);
+
+      if (isSeparator) {
+        // Skip separator rows (|---|---|)
+        continue;
+      } else if (isTableRow) {
+        const cells = trimmed.split('|').slice(1, -1).map(c => c.trim());
+        if (!inTable) {
+          inTable = true;
+          tableHtml = `<table><thead><tr>${cells.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>`;
+        } else {
+          tableHtml += `<tr>${cells.map(c => `<td>${c}</td>`).join('')}</tr>`;
+        }
+      } else {
+        if (inTable) {
+          tableHtml += '</tbody></table>';
+          processedLines.push(tableHtml);
+          tableHtml = '';
+          inTable = false;
+        }
+        processedLines.push(lines[i]);
+      }
+    }
+    if (inTable) {
+      tableHtml += '</tbody></table>';
+      processedLines.push(tableHtml);
+    }
+    html = processedLines.join('\n');
+
+    // Headers
     html = html.replace(/####\s+(.*)/g, '<h4>$1</h4>');
     html = html.replace(/###\s+(.*)/g, '<h3>$1</h3>');
     html = html.replace(/##\s+(.*)/g, '<h2>$1</h2>');
 
-    // Parse lists
-    html = html.replace(/-\s+\*\*(.*?)\*\*:\s*(.*)/g, '<li><strong>$1</strong>: $2</li>');
+    // Lists
     html = html.replace(/-\s+(.*)/g, '<li>$1</li>');
-    
-    // Wrap lists in ul
-    html = html.replace(/(<li>.*<\/li>)+/g, '<ul>$&</ul>');
+    html = html.replace(/(<li>[\s\S]*?<\/li>)(\s*<li>)/g, '$1$2');
+    html = html.replace(/(<li>.*<\/li>)+/gs, '<ul>$&</ul>');
 
-    // Parse inline code
+    // Inline code
     html = html.replace(/`([^`\n]+)`/g, '<code>$1</code>');
 
-    // Parse double breaks as paragraphs
+    // Paragraphs
     html = html.split(/\n\s*\n/).map(p => {
-      if (p.trim().startsWith("<h") || p.trim().startsWith("<pre") || p.trim().startsWith("<table") || p.trim().startsWith("<ul")) {
-        return p;
-      }
-      return `<p>${p.replace(/\n/g, "<br>")}</p>`;
-    }).join("\n");
+      const t = p.trim();
+      if (t.startsWith('<h') || t.startsWith('<pre') || t.startsWith('<table') || t.startsWith('<ul')) return p;
+      return `<p>${p.replace(/\n/g, '<br>')}</p>`;
+    }).join('\n');
 
     return html;
   }
