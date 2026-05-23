@@ -58,6 +58,7 @@
         <a href="#works" class="nav-link">Works</a>
         <a href="#awards" class="nav-link">Awards</a>
         <a href="#lab" class="nav-link">Lab</a>
+        <a href="#cardnews" class="nav-link">Card News</a>
       </nav>
 
       <div class="nav-actions">
@@ -85,6 +86,7 @@
       <a href="#works" class="mobile-link">Works</a>
       <a href="#awards" class="mobile-link">Awards</a>
       <a href="#lab" class="mobile-link">Lab</a>
+      <a href="#cardnews" class="mobile-link">Card News</a>
     </div>
   </div>
 
@@ -308,6 +310,20 @@
       </div>
     </section>
 
+    <!-- 6. CARD NEWS SECTION -->
+    <section id="cardnews" class="cardnews-section section-padding">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-subtitle outfit-font">06 / CARD NEWS</span>
+          <h2 class="section-title">카드뉴스 & 인포그래픽</h2>
+          <p class="section-desc">식품영양·바이오 지식을 시각적으로 풀어낸 카드뉴스 시리즈입니다.</p>
+          <div class="header-line"></div>
+        </div>
+        <div class="cardnews-grid" id="cardnews-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -556,6 +572,30 @@
           <!-- Dynamic markdown contents rendered as styled HTML -->
         </div>
       </article>
+    </div>
+
+    <!-- 7. Card News Section Viewer Modal -->
+    <div class="modal-content-wrapper" id="modal-cn-viewer">
+      <button class="modal-close" aria-label="모달 닫기"><i data-lucide="x"></i></button>
+      <div class="cn-modal-layout">
+        <div class="cn-slide-viewer">
+          <div class="cn-slide-image-wrap" id="cn-slide-image-wrap">
+            <!-- slide image or SVG placeholder -->
+          </div>
+          <button class="cn-nav prev" id="cn-prev" aria-label="이전 슬라이드"><i data-lucide="arrow-left"></i></button>
+          <button class="cn-nav next" id="cn-next" aria-label="다음 슬라이드"><i data-lucide="arrow-right"></i></button>
+          <div class="cn-slide-counter">
+            <span id="cn-current">1</span> / <span id="cn-total">4</span>
+          </div>
+        </div>
+        <div class="cn-modal-info">
+          <span class="info-tag outfit-font" id="cn-modal-date">2026.04</span>
+          <h2 id="cn-modal-title">카드뉴스 제목</h2>
+          <p id="cn-modal-caption" class="cn-caption">슬라이드 설명</p>
+          <div class="cn-modal-tags" id="cn-modal-tags"></div>
+          <div class="cn-dot-nav" id="cn-dot-nav"></div>
+        </div>
+      </div>
     </div>
 
   </div>

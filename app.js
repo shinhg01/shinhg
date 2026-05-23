@@ -1055,6 +1055,134 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // =========================================================
+  // 11. CARD NEWS SECTION (standalone config.cardNews deck viewer)
+  // =========================================================
 
+  // Encode path with spaces/Korean chars for use in img.src
+  function encodePath(path) {
+    return path.split("/").map(seg => encodeURIComponent(seg)).join("/");
+  }
+
+  // 11-1. Render card news deck grid
+  const cardNewsGrid = document.getElementById("cardnews-grid");
+  if (cardNewsGrid && config.cardNews) {
+    cardNewsGrid.innerHTML = config.cardNews.map((deck, i) => {
+      const coverImg = deck.slides[0]?.image ? encodePath(deck.slides[0].image) : "";
+      const tagsHtml = deck.tags.map(t => `<span class="cn-tag">${t}</span>`).join("");
+      return `
+        <article class="cn-deck-card reveal" data-slug="${deck.slug}" style="cursor:pointer;">
+          <div class="cn-cover-wrap">
+            <img class="cn-cover-img" src="${coverImg}"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              alt="${deck.title}" />
+            <div class="cn-cover-svg" style="display:none;">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="cn-grad-${i}" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="${["#3B82F6","#A855F7","#00FF94","#FF6B35"][i % 4]}" stop-opacity="0.15"/>
+                    <stop offset="100%" stop-color="${["#1E3A8A","#581C87","#064E3B","#7C2D12"][i % 4]}" stop-opacity="0.05"/>
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="200" fill="url(#cn-grad-${i})" rx="12"/>
+                <text x="100" y="85" font-family="sans-serif" font-size="48" text-anchor="middle" fill="${["#3B82F6","#A855F7","#00FF94","#FF6B35"][i % 4]}" opacity="0.6">📰</text>
+                <text x="100" y="130" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#ffffff" opacity="0.5">${deck.slides.length} slides</text>
+              </svg>
+            </div>
+            <div class="cn-slide-count-badge">${deck.slides.length}장</div>
+          </div>
+          <div class="cn-deck-info">
+            <div class="cn-deck-tags">${tagsHtml}</div>
+            <h3 class="cn-deck-title">${deck.title}</h3>
+            <p class="cn-deck-subtitle">${deck.subtitle}</p>
+            <div class="cn-deck-footer">
+              <span class="cn-deck-date">${deck.date}</span>
+              <span class="cn-view-link outfit-font">보기 <i data-lucide="arrow-right"></i></span>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+    lucide.createIcons();
+
+    cardNewsGrid.querySelectorAll(".cn-deck-card").forEach(card => {
+      card.addEventListener("click", () => openCnDeck(card.dataset.slug));
+    });
+  }
+
+  // 11-2. Card News Deck Slideshow (uses separate variable names to avoid conflicts)
+  let cnActiveDeck = null;
+  let cnSlideIdx = 0;
+
+  function openCnDeck(slug) {
+    cnActiveDeck = config.cardNews.find(d => d.slug === slug);
+    if (!cnActiveDeck) return;
+    cnSlideIdx = 0;
+    document.getElementById("cn-modal-title").innerText = cnActiveDeck.title;
+    document.getElementById("cn-modal-date").innerText = cnActiveDeck.date;
+    document.getElementById("cn-total").innerText = cnActiveDeck.slides.length;
+    document.getElementById("cn-modal-tags").innerHTML = cnActiveDeck.tags.map(t => `<span class="cn-tag">${t}</span>`).join("");
+    buildCnDots();
+    renderCnSlide();
+    openModal("modal-cn-viewer");
+  }
+
+  function renderCnSlide() {
+    if (!cnActiveDeck) return;
+    const slide = cnActiveDeck.slides[cnSlideIdx];
+    const ci = cnActiveDeck.colorIndex ?? 0;
+    const colors = ["#3B82F6","#A855F7","#00FF94","#FF6B35"];
+    const darkColors = ["#1E3A8A","#581C87","#064E3B","#7C2D12"];
+    document.getElementById("cn-slide-image-wrap").innerHTML = `
+      <img class="cn-slide-img" src="${encodePath(slide.image)}"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        alt="${slide.caption}" />
+      <div class="cn-slide-svg-fallback" style="display:none;">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <defs>
+            <linearGradient id="csf-${ci}" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="${colors[ci % 4]}" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="${darkColors[ci % 4]}" stop-opacity="0.04"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="400" fill="url(#csf-${ci})" rx="16"/>
+          <text x="200" y="165" font-family="sans-serif" font-size="72" text-anchor="middle" fill="${colors[ci % 4]}" opacity="0.35">📰</text>
+          <text x="200" y="230" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#ffffff" opacity="0.6">${slide.caption}</text>
+          <text x="200" y="260" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#ffffff" opacity="0.25">이미지를 카드뉴스/ 폴더에 추가하세요</text>
+        </svg>
+      </div>`;
+    document.getElementById("cn-modal-caption").innerText = slide.caption;
+    document.getElementById("cn-current").innerText = cnSlideIdx + 1;
+    document.getElementById("cn-prev").disabled = cnSlideIdx === 0;
+    document.getElementById("cn-next").disabled = cnSlideIdx === cnActiveDeck.slides.length - 1;
+    updateCnDots();
+  }
+
+  function buildCnDots() {
+    const dotNav = document.getElementById("cn-dot-nav");
+    dotNav.innerHTML = cnActiveDeck.slides.map((_, i) =>
+      `<button class="cn-dot${i === 0 ? " active" : ""}" data-idx="${i}" aria-label="슬라이드 ${i+1}"></button>`
+    ).join("");
+    dotNav.querySelectorAll(".cn-dot").forEach(dot => {
+      dot.addEventListener("click", () => { cnSlideIdx = parseInt(dot.dataset.idx); renderCnSlide(); });
+    });
+  }
+
+  function updateCnDots() {
+    document.querySelectorAll(".cn-dot").forEach((dot, i) => dot.classList.toggle("active", i === cnSlideIdx));
+  }
+
+  document.getElementById("cn-prev").addEventListener("click", () => {
+    if (cnSlideIdx > 0) { cnSlideIdx--; renderCnSlide(); }
+  });
+  document.getElementById("cn-next").addEventListener("click", () => {
+    if (cnActiveDeck && cnSlideIdx < cnActiveDeck.slides.length - 1) { cnSlideIdx++; renderCnSlide(); }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (document.getElementById("modal-cn-viewer").style.display !== "block") return;
+    if (e.key === "ArrowLeft" && cnSlideIdx > 0) { cnSlideIdx--; renderCnSlide(); }
+    if (e.key === "ArrowRight" && cnActiveDeck && cnSlideIdx < cnActiveDeck.slides.length - 1) { cnSlideIdx++; renderCnSlide(); }
+  });
 
 });
