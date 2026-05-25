@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="work-info-box">
             <span class="work-year">${p.year}</span>
+            ${p.badge ? `<div class="work-competition-badge">${p.badge}</div>` : ""}
             <h3 class="work-card-title">${p.title}</h3>
             <p class="work-card-desc">${p.description}</p>
             <div class="work-tools-tags">
@@ -214,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="timeline-card" data-idx="${idx}">
         <div class="timeline-header">
           <span class="award-year">${award.year}</span>
-          <span class="award-badge">${award.result}</span>
+          <span class="award-badge${award.result === '결과 대기 중' ? ' pending' : ''}">${award.result}</span>
         </div>
         <h3 class="award-title">${award.name}</h3>
         <div class="award-work"><i data-lucide="award"></i> ${award.work}</div>
